@@ -1,0 +1,127 @@
+.contenedor_registrarse {
+	width: 100%;
+	height: 100vh;
+	.contenedor_grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 100%;
+		height: calc(100vh - 50px);
+		.contenedor_izquierda {
+			background-image: url("../../utils/img/fondo.jpeg");
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				width: 30vh;
+				min-width: 200px;
+				height: 30vh;
+				min-height: 200px;
+			}
+		}
+		.contenedor_derecha {
+			background-color: black;
+			padding: 50px;
+			display: flex;
+			align-items: center;
+			.contenedor_form {
+				height: min-content;
+				h2 {
+					margin: 0 0 50px 0;
+					font-size: 50px;
+					text-align: left;
+					color: #ffffff;
+				}
+				form {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					width: 300px;
+					p {
+						margin-bottom: 5px;
+						color: #ffffff;
+					}
+					input {
+						width: 100%;
+						height: 30px;
+						border-radius: 10px;
+						border: none;
+					}
+					.btn_registrarse {
+						background-color: rgb(68, 13, 119);
+						color: #ffffff;
+						margin: 30px 0 10px 0;
+						width: 100%;
+						border-radius: 10px;
+						height: 30px;
+						border: none;
+						cursor: pointer;
+						font-weight: bold;
+					}
+					span {
+						font-size: 12px;
+						color: grey;
+					}
+				}
+				.txt_cuenta {
+					font-weight: bold;
+					text-align: start;
+					margin-top: 50px;
+					color: #ffffff;
+				}
+				.btn_iniciaSesion {
+					background-color: transparent;
+					color: rgb(91, 36, 143);
+					border: 1px solid #ffffff;
+					width: 300px;
+					border-radius: 10px;
+					height: 30px;
+					cursor: pointer;
+					float: left;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	footer {
+		background-color: black;
+		height: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 12px;
+		p {
+			margin: 0;
+			color: grey;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.contenedor_registrarse {
+		.contenedor_grid {
+			.contenedor_derecha {
+				.contenedor_form {
+					h2 {
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.contenedor_registrarse {
+		height: 100%;
+		.contenedor_grid {
+			grid-template-columns: 1fr;
+			height: 100%;
+			.contenedor_izquierda {
+				grid-row-start: 2;
+				grid-row-end: 3;
+				grid-column-start: 1;
+				grid-column-end: 2;
+			}
+		}
+	}
+}

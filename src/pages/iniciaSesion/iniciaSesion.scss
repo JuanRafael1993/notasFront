@@ -1,0 +1,92 @@
+.contenedor_iniciaSesion {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(41, 44, 56);
+	.contenedor_form {
+		width: 400px;
+		position: relative;
+		height: min-content;
+		padding: 80px 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 20px;
+		background-color: black;
+		img {
+			width: 7vh;
+			height: 7vh;
+		}
+		h3 {
+			font-size: 25px;
+			color: #fff;
+		}
+		form {
+			width: 60%;
+			padding: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			p {
+				margin: 0 0 5px 0;
+				color: #fff;
+			}
+			input {
+				width: 100%;
+				margin-bottom: 20px;
+				height: 30px;
+				border-radius: 10px;
+				border: none;
+			}
+			button {
+				margin-top: 20px;
+				width: 100%;
+				height: 30px;
+				border-radius: 10px;
+				border: none;
+				color: #fff;
+				background-color: rgb(91, 36, 143);
+			}
+		}
+		.txt_cuenta {
+			font-weight: bold;
+			text-align: start;
+			margin-top: 30px;
+			color: #ffffff;
+		}
+		.btn_registrarse {
+			background-color: transparent;
+			color: rgb(91, 36, 143);
+			border: 1px solid #ffffff;
+			width: 60%;
+			border-radius: 10px;
+			height: 30px;
+			cursor: pointer;
+			float: left;
+			font-weight: bold;
+			&:hover {
+				color: #fff;
+				background-color: rgb(91, 36, 143);
+				border: rgb(91, 36, 143);
+			}
+		}
+	}
+	.btn_cerrar {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		font-size: 20px;
+		background-color: transparent;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		border-radius: 5px;
+		padding: 3px 9px;
+		&:hover {
+			background-color: grey;
+		}
+	}
+}

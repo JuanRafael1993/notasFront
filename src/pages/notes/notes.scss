@@ -1,0 +1,63 @@
+.contenedor_notes {
+	width: 100%;
+	height: calc(100vh - 52px);
+	padding: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 40px 20px;
+	overflow-x: scroll;
+	background-color: black;
+	position: relative;
+	.agregar_nota {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(91, 36, 143);
+		animation-name: animationBoton;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		svg {
+			width: 50px;
+			height: 50px;
+			color: #fff;
+		}
+		&:hover {
+			background-color: #fff;
+			svg {
+				color: rgb(91, 36, 143);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.contenedor_notes {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.contenedor_notes {
+		grid-template-columns: 1fr;
+	}
+}
+
+@keyframes animationBoton {
+	0% {
+		transform: translateY(0);
+	}
+	85% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-30px);
+	}
+}
