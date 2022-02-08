@@ -1,44 +1,42 @@
 //default
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 //css
-import "./notes.scss";
+import './notes.scss';
 //componentes library
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //icons
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 //componentes
-import Card from "../../components/notes/card";
-import AddCard from "../../components/notes/addCard";
+import Card from '../../components/notes/card';
+import AddCard from '../../components/notes/addCard';
+//helpers (obtener cards)
+import ObtenerCards from '../../helpers/apiTraerCards';
 
 const Notes = () => {
 	//estado para agregar nota
 	const [addNote, setAddNote] = useState(false);
+	//estado para las notas
+	const [notas, setNotas] = useState([]);
+
+	//efecto para obtener las cards
+	useEffect(() => {
+		async function traerCards() {
+			let res = await ObtenerCards();
+			setNotas(res);
+		}
+		traerCards();
+	}, []);
 
 	return (
 		<div className="contenedor_notes">
 			{/*Agregar nota*/}
-			{addNote ? <AddCard setAddNote={setAddNote} /> : null}
+			{addNote ? <AddCard setAddNote={setAddNote} setNotas={setNotas} /> : null}
 			<div className="agregar_nota">
 				<FontAwesomeIcon onClick={() => setAddNote(true)} icon={faPlus} />
 			</div>
-			<Card
-				titulo="Titulo Nota"
-				nota="ldfds dsf sdf sdf d f sdf sdf sdf sdf  dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef"
-			/>
-			<Card
-				titulo="Titulo Nota"
-				nota="ldfds dsf sdf sdf d f sdf sdf sdf sdf  dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef"
-			/>
-			<Card
-				titulo="Titulo Nota"
-				nota="ldfds dsf sdf sdf d f sdf sdf sdf sdf  dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef dsfdsfsdfsdf sdf sdffs dfsdf sdf ef rf esdfsdfsdf ef"
-			/>
-			<Card></Card>
-			<Card></Card>
-			<Card></Card>
-			<Card></Card>
-			<Card></Card>
-			<Card></Card>
+			{notas.map((item) => {
+				return <Card key={item._id} titulo={item.titulo} nota={item.nota} />;
+			})}
 		</div>
 	);
 };
