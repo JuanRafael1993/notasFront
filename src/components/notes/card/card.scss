@@ -8,6 +8,37 @@
 	flex-direction: column;
 	align-items: center;
 	padding: 20px;
+	position: relative;
+
+	.actualizar {
+		width: 35px;
+		height: 35px;
+		color: rgb(91, 36, 143);
+		position: absolute;
+		cursor: pointer;
+		right: -15px;
+		bottom: -15px;
+		transition: all 0.3s;
+		&:hover {
+			color: #fff;
+			width: 45px;
+		}
+	}
+
+	.cerrar {
+		width: 45px;
+		height: 45px;
+		color: rgb(91, 36, 143);
+		position: absolute;
+		cursor: pointer;
+		right: -22px;
+		top: -22px;
+		transition: all 0.3s;
+		&:hover {
+			color: #fff;
+			width: 55px;
+		}
+	}
 
 	.top {
 		color: #fff;
@@ -24,7 +55,11 @@
 		height: 10px;
 		border-radius: 30%;
 		margin: 15px 0;
-		background: radial-gradient(circle, rgba(50, 78, 217, 1) 0%, rgba(91, 36, 143, 1) 100%);
+		background: radial-gradient(
+			circle,
+			rgba(50, 78, 217, 1) 0%,
+			rgba(91, 36, 143, 1) 100%
+		);
 	}
 
 	.bot {
@@ -32,7 +67,6 @@
 		height: 100%;
 		overflow-y: scroll;
 		color: #fff;
-
 
 		p {
 			text-align: justify;

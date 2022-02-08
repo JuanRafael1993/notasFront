@@ -1,7 +1,11 @@
 //default
-import React from "react";
+import React from 'react';
+//componentes library
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//icons
+import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
 //css
-import "./card.scss";
+import './card.scss';
 
 const Card = (props) => {
 	//destructuracion de las props
@@ -9,6 +13,8 @@ const Card = (props) => {
 
 	return (
 		<div className="card">
+			<FontAwesomeIcon className="actualizar" icon={faEdit} />
+			<FontAwesomeIcon className="cerrar" icon={faTimes} />
 			<div className="top">
 				<h3>{titulo}</h3>
 			</div>
