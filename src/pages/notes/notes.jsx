@@ -20,12 +20,14 @@ const Notes = () => {
 
 	//efecto para obtener las cards
 	useEffect(() => {
-		async function traerCards() {
-			let res = await ObtenerCards();
-			setNotas(res);
-		}
 		traerCards();
 	}, []);
+
+	//funcion para traer las cards
+	async function traerCards() {
+		let res = await ObtenerCards();
+		setNotas(res);
+	}
 
 	return (
 		<div className="contenedor_notes">
@@ -35,7 +37,15 @@ const Notes = () => {
 				<FontAwesomeIcon onClick={() => setAddNote(true)} icon={faPlus} />
 			</div>
 			{notas.map((item) => {
-				return <Card key={item._id} titulo={item.titulo} nota={item.nota} />;
+				return (
+					<Card
+						key={item._id}
+						titulo={item.titulo}
+						nota={item.nota}
+						id={item._id}
+						setNotas={setNotas}
+					/>
+				);
 			})}
 		</div>
 	);
