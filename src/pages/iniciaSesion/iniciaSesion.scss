@@ -1,3 +1,5 @@
+@import '../../sass/index.scss';
+
 .contenedor_iniciaSesion {
 	width: 100%;
 	height: 100vh;
@@ -9,7 +11,7 @@
 		width: 400px;
 		position: relative;
 		height: min-content;
-		padding: 80px 30px;
+		padding: 50px 30px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -21,72 +23,37 @@
 		}
 		h3 {
 			font-size: 25px;
-			color: #fff;
+			color: $color_blanco;
 		}
 		form {
-			width: 60%;
-			padding: 10px;
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			margin: 20px 0;
 			p {
 				margin: 0 0 5px 0;
-				color: #fff;
+				color: $color_blanco;
 			}
 			input {
-				width: 100%;
 				margin-bottom: 20px;
-				height: 30px;
-				border-radius: 10px;
-				border: none;
+				@include designInput;
 			}
 			button {
 				margin-top: 20px;
-				width: 100%;
-				height: 30px;
-				border-radius: 10px;
-				border: none;
-				color: #fff;
-				background-color: rgb(91, 36, 143);
+				@include designButton;
 			}
 		}
 		.txt_cuenta {
 			font-weight: bold;
 			text-align: start;
-			margin-top: 30px;
-			color: #ffffff;
+			margin: 30px 0 10px 0;
+			color: $color_blanco;
 		}
 		.btn_registrarse {
-			background-color: transparent;
-			color: rgb(91, 36, 143);
-			border: 1px solid #ffffff;
-			width: 60%;
-			border-radius: 10px;
-			height: 30px;
-			cursor: pointer;
 			float: left;
-			font-weight: bold;
-			&:hover {
-				color: #fff;
-				background-color: rgb(91, 36, 143);
-				border: rgb(91, 36, 143);
-			}
-		}
-	}
-	.btn_cerrar {
-		position: absolute;
-		left: 20px;
-		top: 20px;
-		font-size: 20px;
-		background-color: transparent;
-		color: #fff;
-		border: none;
-		cursor: pointer;
-		border-radius: 5px;
-		padding: 3px 9px;
-		&:hover {
-			background-color: grey;
+			@include designButton;
 		}
 	}
 }

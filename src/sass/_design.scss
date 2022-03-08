@@ -1,0 +1,28 @@
+@import './colors';
+
+@mixin designButton {
+	background-color: $color_principal;
+	color: $color_blanco;
+	width: 100%;
+	border-radius: 10px;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	&:hover {
+		background-color: transparent;
+		border: 2px solid $color_principal;
+	}
+}
+
+@mixin designInput {
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	border: none;
+	padding: 0 5px;
+	&:focus {
+		outline: none;
+		border: 2px solid $color_focus;
+	}
+}
