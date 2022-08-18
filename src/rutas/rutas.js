@@ -1,9 +1,9 @@
 //default
-import React from "react";
+import React from 'react';
 //react router
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //pages
-import Notes from "../pages/notes";
+import Notes from '../pages/notes';
 
 const Rutas = () => {
 	return (

@@ -17,9 +17,6 @@ const UpdateCard = (props) => {
 
 	//funcion para actualizar la nota
 	async function handleUpdateNote() {
-		console.log(tituloUpdate);
-		console.log(notaUpdate);
-
 		try {
 			let res = await fetch('http://localhost:3003/user/card', {
 				method: 'PUT',

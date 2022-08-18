@@ -20,7 +20,11 @@ const AddCard = (props) => {
 		try {
 			let res = await fetch('http://localhost:3003/user/card', {
 				method: 'POST',
-				body: JSON.stringify({ titulo, nota }),
+				body: JSON.stringify({
+					titulo,
+					nota,
+					id: JSON.parse(localStorage.getItem('loggedNoteIdUser')),
+				}),
 				headers: {
 					Authorization: Token(),
 					'Content-Type': 'application/json',

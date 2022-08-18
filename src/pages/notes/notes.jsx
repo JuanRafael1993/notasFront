@@ -26,6 +26,7 @@ const Notes = () => {
 	//funcion para traer las cards
 	async function traerCards() {
 		let res = await ObtenerCards();
+		console.log(res);
 		setNotas(res);
 	}
 

@@ -1,10 +1,10 @@
 //default
-import React from "react";
+import React from 'react';
 //css
-import "./principal.scss";
+import './principal.scss';
 //components
-import Navbar from "../../components/generales/navbar";
-import Rutas from "../../rutas/rutas";
+import Navbar from '../../components/generales/navbar';
+import Rutas from '../../rutas/rutas';
 
 const Principal = (props) => {
 	//destructuracion de las props

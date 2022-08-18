@@ -26,12 +26,13 @@ const IniciaSesion = ({ setUser, setInicioRegistrarse }) => {
 			});
 			const data = await res.json();
 
-			console.log(data);
-
 			if (data.code === 0) {
 				setUser(data);
+				console.log(data);
 				//guardar el token en el localstorage
 				localStorage.setItem('loggedNoteUser', JSON.stringify(data.token));
+				//guardar el id en el localstorage
+				localStorage.setItem('loggedNoteIdUser', JSON.stringify(data.id));
 			} else {
 				alert(data.message);
 			}
